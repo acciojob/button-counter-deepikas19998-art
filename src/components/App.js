@@ -1,13 +1,19 @@
 
-import React from "react";
-import './../styles/App.css';
+import React, { useState } from "react";
 
-const App = () => {
+function ButtonCounter() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => {
+    setCount((prev) => prev + 1);
+  };
+
   return (
     <div>
-        <p>I am learning React. My life is getting better.</p>
+      <p>Button clicked {count} times</p>
+      <button onClick={handleClick}>Click me</button>
     </div>
-  )
+  );
 }
 
-export default App
+export default ButtonCounter;
